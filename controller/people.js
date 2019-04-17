@@ -1,3 +1,5 @@
+const Peope = require("../model/People");
+
 module.exports = {
   new: (req, res) => {
     res.render("new.ejs");
