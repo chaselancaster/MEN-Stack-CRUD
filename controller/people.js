@@ -41,5 +41,28 @@ module.exports = {
         res.redirect("/people");
       }
     });
+  },
+  edit: (req, res) => {
+    People.findById(req.params.id, (err, editPerson) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("edit.ejs", {
+          person: editPerson,
+          id: req.params.id
+        });
+      }
+    });
+  },
+  update: (req, res) => {
+    People.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true },
+      (err, updatedUser) => {
+        console.log(updatedUser);
+        res.redirect("/people");
+      }
+    );
   }
 };
