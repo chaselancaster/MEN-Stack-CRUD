@@ -20,5 +20,16 @@ module.exports = {
         res.redirect("/people");
       }
     });
+  },
+  show: (req, res) => {
+    People.findById(req.params.id, (err, foundPerson) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("show.ejs", {
+          person: foundPerson
+        });
+      }
+    });
   }
 };

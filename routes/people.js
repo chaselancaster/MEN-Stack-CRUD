@@ -5,5 +5,6 @@ const peopleController = require("../controller/people");
 router.get("/", peopleController.index);
 router.get("/new", peopleController.new);
 router.post("/", peopleController.create);
+router.get("/:id", peopleController.show);
 
 module.exports = router;

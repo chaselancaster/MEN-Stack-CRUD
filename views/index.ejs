@@ -10,7 +10,7 @@
     <h1>This is the index page!</h1>
     <% for (let i = 0; i < people.length; i++) {%>
     <p>
-        <%=people[i].name%> </br>
+        <a href="/people/<%=people[i]._id%>"><%=people[i].name%></a> </br>
         <%=people[i].age%> </br>
         <%=people[i].gender%> </br>
         <%=people[i].bDay%> </br>
