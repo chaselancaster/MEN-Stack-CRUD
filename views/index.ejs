@@ -14,6 +14,9 @@
         <%=people[i].age%> </br>
         <%=people[i].gender%> </br>
         <%=people[i].bDay%> </br>
+        <form action="/people/<%=people[i]._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+        </form>
     </p>
     <%}%>
     

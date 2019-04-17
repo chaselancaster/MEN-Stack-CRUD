@@ -31,5 +31,15 @@ module.exports = {
         });
       }
     });
+  },
+  destroy: (req, res) => {
+    People.findOneAndDelete(req.params.id, (err, deletedPerson) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(deletedPerson);
+        res.redirect("/people");
+      }
+    });
   }
 };
